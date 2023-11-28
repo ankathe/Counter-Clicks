@@ -29,3 +29,11 @@ html, body{
   justify-content: center;
   gap: 15px;
 }
+
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+}
