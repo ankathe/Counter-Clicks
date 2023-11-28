@@ -2,14 +2,16 @@ import "./App.css";
 import logo from "./images/logo-projects-react.png";
 import Boton from "./components/Boton";
 import Counter from "./components/Counter";
+import { useState } from "react";
 
 function App() {
+  const [numClicks, setNumClicks] = useState(0); 
   const manejarClick = () => {
-    console.log("click");
+    setNumClicks(numClicks + 1); 
   };
 
   const restartCounter = () => {
-    console.log("restart");
+    setNumClicks(0);
   };
 
   return (
@@ -17,9 +19,11 @@ function App() {
       <div className="logo-container">
         <img className="logo" src={logo} alt="logo clicks counter" />
       </div>
-      <Counter numClicks = '5' />
+      <div className="title">CLICKS COUNTER </div>
+    
       
       <div className="container-counter-principal">
+        <Counter numClicks = {numClicks} />
         <Boton text="Click" esBtnDeClick={true} manejarClic={manejarClick} />
         <Boton text="Restart" esBtnDeClick={false} manejarClic={restartCounter} />
       </div>
