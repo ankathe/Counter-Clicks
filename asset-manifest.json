@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Counter-Clicks/static/css/main.dbfa2ffd.css",
+    "main.js": "/Counter-Clicks/static/js/main.e3e90f87.js",
+    "static/media/logo-projects-react.png": "/Counter-Clicks/static/media/logo-projects-react.100841c2334f63c4b788.png",
+    "index.html": "/Counter-Clicks/index.html",
+    "main.dbfa2ffd.css.map": "/Counter-Clicks/static/css/main.dbfa2ffd.css.map",
+    "main.e3e90f87.js.map": "/Counter-Clicks/static/js/main.e3e90f87.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dbfa2ffd.css",
+    "static/js/main.e3e90f87.js"
+  ]
+}
