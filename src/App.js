@@ -1,8 +1,8 @@
 import "./App.css";
-import logo from "./images/logo-projects-react.png";
 import Boton from "./components/Boton";
 import Counter from "./components/Counter";
 import { useState } from "react";
+import Logo from './components/logo';
 
 function App() {
   const [numClicks, setNumClicks] = useState(0); 
@@ -16,12 +16,8 @@ function App() {
 
   return (
     <div className="App">
-      <div className="logo-container">
-        <img className="logo" src={logo} alt="logo clicks counter" />
-      </div>
+      <Logo/>
       <div className="title">CLICKS COUNTER </div>
-    
-      
       <div className="container-counter-principal">
         <Counter numClicks = {numClicks} />
         <Boton text="Click" esBtnDeClick={true} manejarClic={manejarClick} />

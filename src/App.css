@@ -12,16 +12,6 @@ html, body{
   padding-top: 15px;
 }
 
-.logo-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-}
-.logo{
-  width: 200px;
-}
-
 .container-counter-principal{
   min-width: 600px;
   display: flex;
