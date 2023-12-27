@@ -1,30 +1,46 @@
+import React from 'react';
 import "./App.css";
 import Boton from "./components/Boton";
 import Counter from "./components/Counter";
-import { useState } from "react";
 import Logo from './components/logo';
 
-function App() {
-  const [numClicks, setNumClicks] = useState(0); 
-  const manejarClick = () => {
-    setNumClicks(numClicks + 1); 
-  };
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      numClicks: 0
+    };
+    this.manejarClick = this.manejarClick.bind(this);
+    this.restartCounter = this.restartCounter.bind(this);
+  }
 
-  const restartCounter = () => {
-    setNumClicks(0);
-  };
+  manejarClick() { 
+    this.setState(({numClicks}) => ({numClicks: numClicks + 1}));
+  }
 
-  return (
-    <div className="App">
-      <Logo/>
-      <div className="title">CLICKS COUNTER </div>
-      <div className="container-counter-principal">
-        <Counter numClicks = {numClicks} />
-        <Boton text="Click" esBtnDeClick={true} manejarClic={manejarClick} />
-        <Boton text="Restart" esBtnDeClick={false} manejarClic={restartCounter} />
+  restartCounter() {
+    this.setState({numClicks:0});
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Logo/>
+        <div className="title">CLICKS COUNTER </div>
+        <div className="container-counter-principal">
+          <Counter numClicks = {this.state.numClicks} />
+          <Boton 
+          text="Click" 
+          esBtnDeClick={true} 
+          manejarClick={this.manejarClick} />
+          <Boton 
+          text="Restart" 
+          esBtnDeClick={false} 
+          manejarClick={this.restartCounter} />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
